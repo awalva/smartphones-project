@@ -1,0 +1,35 @@
+Explanation of my submission.
+========================================================
+
+Items submitted/uploaded:
+1. A tidy data set in the form of a text file.
+2. This Readme markdown file.
+3. The run_analysis.R script that generates the tidy data.
+4. The CodeBook markdown file.
+
+========================================================
+
+Explanation of run_analysis.R:
+- step 1 - read in all pertinent files.
+         - `features.txt` contains all variables names for test and train 
+           data sets.  These will become the "descriptive variable names".
+         - `activity.txt` contains the "descriptive activity names". They
+           will later be merged with the data based on labels in the data.
+- step 2 - use make.names() to create appropriate column names from features.
+- step 3 - rbind() test and train data sets, and apply "descriptive activity
+           names"
+- step 4 - separately combine activity labels for test and train, as well
+           as, the subject ids for test and train.
+- step 5 - merge combined data set with "descriptive activity names".
+- step 6 - subset only columns with "mean", "Mean", and "std".
+         - the result of this step is the first data set required of the 
+           project assignment.
+- step 7 - use melt, ddply, and dcast to create a tidy data set with the 
+           averages of each column variable for each combination subject
+           and activity.
+           The data is tidy because each column contains only one variable,
+           and each row represents on observation (mean value).
+         - This tidy is submitted as part of the assignment.
+
+
+refer to comments in the script for additional detail.
